@@ -1,0 +1,117 @@
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MUPC</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="app.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript" async></script>
+    </head>
+    <body>
+    <style>
+		body {
+  background-color: #000;
+}
+
+#landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+  font-style:lato;
+}
+
+#landing-header h1 {
+  color: #fff;
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.slideshow { 
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li { 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 50s linear infinite; 
+}
+
+.slideshow li:nth-child(1) { 
+  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+}
+.slideshow li:nth-child(2) { 
+  background-image: url("https://i.ibb.co/Sxnrm6J/IMG-20200724-151925-2.jpg");
+  animation-delay: 10s; 
+}
+.slideshow li:nth-child(3) { 
+  background-image: url(https://i.ibb.co/XbLtLyH/IMG-0619.jpg);
+  animation-delay: 20s; 
+}
+.slideshow li:nth-child(4) { 
+  background-image: url("https://i.ibb.co/2MCgHjy/LRM-EXPORT-4915203881011-20190306-201856337.jpg");
+  animation-delay: 30s; 
+}
+.slideshow li:nth-child(5) { 
+  background-image: url("https://i.ibb.co/3sZGdT4/LRM-EXPORT-177657919619581-20181024-101949450.jpg");
+  animation-delay: 40s; 
+}
+
+@keyframes imageAnimation { 
+  0% { 
+    opacity: 0; 
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}
+		</style>
+        <div class="container">
+            
+            
+        </div>
+    
+        <div id="landing-header">
+            <h1>Welcome to Picto-View Hub</h1>
+            <a href="/mains" class="btn btn-lg btn-info">Let's Dive in</a>
+        </div>
+    
+        <ul class="slideshow">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+    </body>
+</html>

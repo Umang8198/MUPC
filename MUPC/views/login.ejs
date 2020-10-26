@@ -1,0 +1,49 @@
+<br><%- include("./partials/header") %>
+<style>
+	body{
+background-image:url("https://images4.alphacoders.com/255/thumb-1920-255596.jpg");
+	background-size:cover;
+	}
+	h1{
+		text-align:center;
+		color:black;
+		padding-bottom:0px;
+	}
+	h2{
+		text-align:center;
+		color:black;
+		padding-bottom:0px;
+	}
+	.stylo{
+		text-align:center;
+		padding-bottom:400px;
+	}
+	.into{
+		width:30vh;
+		height:300px:
+	}
+	#but{
+		width:20vh;
+	}
+</style>
+<h1>
+	Welcome Back
+</h1>
+<h2>
+	Login!
+</h2>
+
+<div class="row text-center" style="width:30%; margin: 100px auto;">
+
+<form  class="stylo"action="/login" method="POST">
+	<div class="form-group">
+	
+		<input  class="form-control" type="text" name="username" placeholder="username"></div>
+	<div class="form-group">
+		<input class="form-control" type="password" name="password" placeholder="password"></div>
+	<button id="but" class="btn btn-primary btn-lg">
+		Login !
+	</button>
+</form>
+</div>
+<%- include("./partials/footer") %>

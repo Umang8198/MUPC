@@ -1,0 +1,38 @@
+<%- include("../partials/header") %>
+<style>
+body{
+	text-align:center;
+	background-image:url(https://i.pinimg.com/originals/50/bc/25/50bc2517b9a1a07d1220e2db57cac523.jpg);
+	background-size:cover;
+	}
+h1{
+	color:white;
+	padding-bottom:200px;
+	}
+h1{
+		color:white;
+		font-family:sans-serif;
+		font-style:times new roman;
+		padding-bottom:220px;
+	}
+	.into{
+		width:30vh;
+
+	}
+	.int{
+		padding-bottom:300px;
+	}</style>
+<h1>
+	Add your review  <%= campground.title %>
+</h1>
+<form class="int" action="/archive/<%=campground._id%>/comments" method="POST">
+	<input class="into" type ="text" name="comment[text]" placeholder="text">
+	
+	<button>
+		submit!
+	</button>
+</form>
+<div class="row text-center">
+			<a class="btn btn-primary btn-lg" href="/archive">goback</a>
+		</div>
+<%- include("../partials/footer") %>

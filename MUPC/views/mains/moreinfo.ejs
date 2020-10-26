@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+	
+.thumbnail img{
+	width:100%
+}
+
+.thumbnail{
+	padding:0;
+}
+
+.thumbnail .caption {
+	padding:9px;
+}
+body{
+	background-color:#232323;
+	}</style>
+<%- include("../partials/header") %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<p class="lead">
+				Picto-View Hub</p>
+		
+		</div>
+		<div class="col-md-9">
+			<div class="thumbnail">
+				<img class="img-responsive" src="<%= foundImage.image %>">
+				<div class="caption">
+					<h4><a><%=foundImage.name %></a></h4>
+					
+					<p>
+						Shot by <strong><a href="/users/<%=foundImage.author.id%>"><%= foundImage.author.username %></a></strong>
+					</p>
+					<p><%= foundImage.description %></p>
+					<%if(currentUser && foundImage.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){%>
+					<a class="btn btn-xs btn-warning" href="/moreinfo/<%=foundImage._id%>/edit" >
+						Edit
+					</a>
+					<form  style="display:inline"action="/moreinfo/<%=foundImage._id%>?_method=DELETE" method="POST">
+						<button class="btn btn-xs btn-danger">
+							Delete
+						</button>
+					</form>
+					<%}%>
+	
+			</div>
+		</div>
+			<div class="well">
+				<div class="text-right">
+					<a class="btn btn-success" href="/moreinfo/<%= foundImage._id %>/comments/new">Add new comment</a>
+				</div>
+				<hr>
+				<% foundImage.comments.forEach(function(comment){%>
+				<div class="row">
+					<div class="col-md-12">
+						<strong><%=comment.author.username %></strong>
+						<span class="pull-right"></span>
+					<p>
+	 					<%=comment.text%>
+					</p>
+						<%if(currentUser && comment.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin){%>
+						<a class="btn btn-xs btn-warning" href="/moreinfo/<%=foundImage._id%>/comments/<%=comment._id%>/edit">
+							Edit
+						</a>
+						<form style="display:inline" action="/moreinfo/<%=foundImage._id%>/comments/<%=comment._id%>?_method=DELETE" method="POST">
+							<input type="submit" class="btn btn-xs btn-danger" value="Delete">
+							
+						</form>
+						<%}%>
+	
+					</div>
+				</div>
+	
+<%})%>
+
+			</div>
+	</div>
+</div>
+
+   
+
+<%- include("../partials/footer") %>

@@ -1,0 +1,64 @@
+<%- include("../partials/header") %>
+<style>
+body{
+background-image:url(https://www.vamosrayos.com/b/2020/01/cool-hd-background-pictures-images-download-for-iphone-1080p.jpg);
+background-size:cover;
+	}
+	h1{
+		text-align:center;
+		color:white;
+	}
+	#gallery{
+		padding-bottom:200px;
+	}
+	h4{
+		color:white;
+		padding-left:20px;
+		margin-left:20px;
+		padding-bottom:30px;
+	}
+	.thumbnail img{
+		width:100%;
+		height:200px;
+	}	
+	H3{
+		color:black;
+		text-align:center;
+		font-style:monospace;
+	}
+	
+</style>
+<h1>
+	Review Gallery
+</h1>
+
+<h4>
+	<a href="review/new" class="btn btn-success btn-md ">Upload Images for reviewing</a>
+</h4>
+
+		 <section id="gallery">
+	<div class="container">
+	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+	<%  rImgs.forEach(function(rImg) {%>
+	<div class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+					
+		
+						<img src="<%=rImg.image%>">
+					<div class="caption">
+						<p><a class="btn btn-xs btn-primary" href="review/<%=rImg._id%>">More Info</a></p>
+						<p>
+							<!--Shot by <%=rImg.author.username%> --> <H3><%=rImg.title%></H3>
+						</p>
+					</div>
+	
+	
+		</div>
+		</div>
+	<% }) %>
+		
+
+		</div>
+			 </div>
+</section>
+<%- include("../partials/footer") %>

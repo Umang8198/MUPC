@@ -1,0 +1,65 @@
+<%- include("../partials/header") %>
+<style>
+	body{
+		background-image:url("https://www.99images.com/photos/wallpapers/3d-abstract/abstract-photographyandroid-iphone-desktop-hd-backgrounds-wallpapers-1080p-4k-wjcm1.jpg?v=1577321433");
+		background-size:cover;
+	}
+	h2{
+		padding-top:30px;
+		text-align:center;
+		padding-bottom:30px;
+		color:white;
+	}
+	.thumbnail{
+		height:250px;
+		width:300px;
+		
+		}
+	.c{
+		text-align:center;
+		
+	}
+	#sty{
+		padding-right:20px;
+		margin:20px;
+	}
+	.thumbnail img{
+		height:200px;
+		width:300px;
+	}
+	
+</style>
+	<h2>
+	User Profile of <%=userr.firstName%> <%=userr.lastName%>
+		</h2>
+
+<!--<h3>
+	<%=userr.email%>
+</h3> -->
+
+		 <section id="gallery">
+	<div class="container">
+	<div id="flexo" class="row text-center" style="display:flex; flex-wrap: wrap;">
+<% Img.forEach(function(foundImg){%>
+		<div id="sty" class="col-md-3 col-sm-6">
+				<div class="thumbnail">
+
+    <img src="<%=foundImg.image%>">
+	<div class="caption">
+		<strong><%=foundImg.title%></strong>
+					</div>
+					
+			</div>
+		</div>
+		<%})%>
+		</div>
+			 </div>
+</section>
+				<button href="/users" class="btn btn-primary c" >Go Back
+				
+					</button>
+
+	
+
+
+<%- include("../partials/footer") %>

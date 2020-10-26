@@ -1,0 +1,42 @@
+<%- include("../partials/header") %>
+<style>
+	body{
+		background-color:#232323;
+	}
+	.bro h1{
+		color:white;
+	}
+</style>
+
+<div class="container">
+	<div class="row">
+		
+
+		<h1 style="text-align:center" color="white">
+			Edit <%=main.name%>
+		</h1>
+		<div class="row text-center" style="width:30%; margin: 100px auto;">
+			
+				
+				<form action="/review/<%=main._id%>?_method=PUT" method="POST">
+					<input type ="text" name="foundIm[name]" value="<%= main.title%>">
+					<input type ="text" name="foundIm[image]" value="<%= main.image%>">"
+					<input type=
+						   "text" name="foundIm[description]" value="<%= main.description%>">
+					<p style="width:100%; margin: 25px auto;">
+						<button class="btn btn-primary btn-lg">
+						Submit!
+					   </button>
+						
+					</p>
+				</form>
+        <div class="row text-center">
+			<a class="btn btn-primary btn-lg" href="/review">Go Back</a>
+		</div>
+		</div>
+
+ 
+		
+	</div>
+</div>
+<%- include("../partials/footer") %>
