@@ -1,0 +1,10 @@
+<h1>
+	Automatic Tagging using AWS Rekognition
+</h1>
+<p >
+	<img src="<%=image%>">
+</p>
+
+<%tags.forEach(function(tg){%>
+	<li><%=tg.tag%> with sureity of <%=tg.confidence%></li>
+<%})%>
